@@ -118,7 +118,7 @@ const ProductList: React.FC = () => {
                                 <div className="font-semibold text-gray-800 mt-2">MRP: {product.price}</div>
 
                                 {/* Link to Product Detail Page */}
-                                <a href={`productdetail`} className="mt-4 text-blue-600 hover:underline">
+                                <a href={`addToCart/${product.id}`} className="mt-4 text-blue-600 hover:underline">
                                     View Details
                                 </a>
                             </div>

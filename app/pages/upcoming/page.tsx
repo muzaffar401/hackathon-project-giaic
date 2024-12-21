@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const page = () => {
@@ -12,7 +13,7 @@ const page = () => {
         { src: '/card153.webp', alt: 'Frame 153' },
         { src: '/card154.webp', alt: 'Frame 154' }
     ];
-    
+
 
 
 
@@ -117,18 +118,20 @@ const page = () => {
 
             <main className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-4 p-4 sm:p-6 md:p-8">
                 {imageData.map((image, index) => (
-                    <div key={index} className="group relative overflow-hidden rounded-lg shadow-md h-full  w-full">
-                        <img
-                            alt={image.alt}
-                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                            src={image.src}
-                        />
-                        <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                            <button className="bg-white text-red-500 font-bold py-2 px-4 rounded">
-                                Learn More
-                            </button>
+                    <Link href={'items'}>
+                        <div key={index} className="group relative overflow-hidden rounded-lg shadow-md h-full  w-full">
+                            <img
+                                alt={image.alt}
+                                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                                src={image.src}
+                            />
+                            <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <button className="bg-white text-red-500 font-bold py-2 px-4 rounded">
+                                    Learn More
+                                </button>
+                            </div>
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </main>
             <footer className="text-center py-4 border-t">
